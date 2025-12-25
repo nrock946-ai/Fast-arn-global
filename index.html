@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast £Arn Global - Professional Trading Broker</title>
+    <meta name="description" content="Fast £Arn Global: Trusted global trading broker offering high-return investment plans in forex, crypto, and commodities.">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #001f3f;
+            --accent: #ffd700;
+            --text: #ffffff;
+            --gray: #f0f0f0;
+            --dark-gray: #333333;
+        }
+        body { margin: 0; font-family: 'Roboto', sans-serif; background: var(--gray); color: var(--dark-gray); line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        header { background: var(--primary); color: var(--text); padding: 20px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+        nav ul { list-style: none; display: flex; gap: 30px; }
+        nav a { color: var(--text); text-decoration: none; font-weight: 500; }
+        nav a:hover { color: var(--accent); }
+        .hero { background: linear-gradient(rgba(0,31,63,0.8), rgba(0,31,63,0.8)), url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; text-align: center; padding: 150px 20px 100px; color: var(--text); }
+        .hero h1 { font-size: 3.5em; margin: 0; }
+        .hero p { font-size: 1.5em; }
+        .btn { background: var(--accent); color: var(--primary); padding: 15px 30px; border: none; border-radius: 5px; font-size: 1.2em; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 20px; }
+        .btn:hover { background: #e6c200; }
+        section { max-width: 1200px; margin: 80px auto; padding: 0 20px; }
+        h2 { text-align: center; font-size: 2.5em; margin-bottom: 40px; color: var(--primary); }
+        .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .plan { background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; padding: 40px 20px; position: relative; transition: transform 0.3s; }
+        .plan:hover { transform: translateY(-10px); }
+        .plan.recommended { border: 3px solid var(--accent); }
+        .plan.recommended::before { content: "Recommended"; background: var(--accent); color: var(--primary); padding: 10px 20px; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); border-radius: 5px; font-weight: bold; }
+        .plan h3 { font-size: 2em; color: var(--primary); }
+        .plan .price { font-size: 3em; font-weight: bold; color: var(--accent); margin: 20px 0; }
+        .plan ul { list-style: none; padding: 0; }
+        .plan li { margin: 15px 0; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .feature { text-align: center; }
+        .testimonials { background: var(--primary); color: var(--text); padding: 60px 20px; }
+        .testimonial { max-width: 800px; margin: 0 auto 40px; font-style: italic; }
+        footer { background: var(--dark-gray); color: var(--text); padding: 40px 20px; text-align: center; }
+        .risk { font-size: 0.9em; margin-top: 40px; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5em; } nav ul { flex-direction: column; gap: 10px; } }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><h2>Fast £Arn Global</h2></div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#plans">Plans</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Welcome to Fast £Arn Global</h1>
+        <p>Professional Global Trading Broker | High-Return Investment Opportunities in 48 Hours</p>
+        <a href="#plans" class="btn">View Investment Plans</a>
+    </section>
+
+    <section id="about">
+        <h2>About Fast £Arn Global</h2>
+        <p style="text-align:center;max-width:800px;margin:0 auto;">Fast £Arn Global is a trusted international trading broker specializing in forex, cryptocurrencies, commodities, and indices. With advanced platforms and expert strategies, we deliver secure, high-yield opportunities for investors worldwide. Join thousands earning consistent returns.</p>
+    </section>
+
+    <section id="plans">
+        <h2>Choose Your Investment Plan</h2>
+        <div class="plans">
+            <div class="plan">
+                <h3>Basic</h3>
+                <div class="price">$850</div>
+                <p>Invest <strong>$100</strong><br>Earn in 48 Hours</p>
+                <ul>
+                    <li>Basic Market Access</li>
+                    <li>Standard Support</li>
+                    <li>Secure Transactions</li>
+                </ul>
+                <a href="#contact" class="btn">Select Plan</a>
+            </div>
+            <div class="plan">
+                <h3>Standard</h3>
+                <div class="price">$1,350</div>
+                <p>Invest <strong>$250</strong><br>Earn in 48 Hours</p>
+                <ul>
+                    <li>Enhanced Analytics</li>
+                    <li>Priority Support</li>
+                    <li>Secure Transactions</li>
+                </ul>
+                <a href="#contact" class="btn">Select Plan</a>
+            </div>
+            <div class="plan recommended">
+                <h3>Premium</h3>
+                <div class="price">$2,500</div>
+                <p>Invest <strong>$470</strong><br>Earn in 48 Hours</p>
+                <ul>
+                    <li>Advanced Tools</li>
+                    <li>24/7 Dedicated Support</li>
+                    <li>Maximum Security</li>
+                </ul>
+                <a href="#contact" class="btn">Select Plan</a>
+            </div>
+            <div class="plan">
+                <h3>VIP</h3>
+                <div class="price">$5,500</div>
+                <p>Invest <strong>$1,000</strong><br>Earn in 48 Hours</p>
+                <ul>
+                    <li>Exclusive Strategies</li>
+                    <li>Personal Account Manager</li>
+                    <li>VIP Security & Bonuses</li>
+                </ul>
+                <a href="#contact" class="btn">Select Plan</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Why Choose Us?</h2>
+        <div class="features">
+            <div class="feature"><h3>Secure Platform</h3><p>Advanced encryption and regulated compliance.</p></div>
+            <div class="feature"><h3>Expert Trading</h3><p>Automated strategies for maximum returns.</p></div>
+            <div class="feature"><h3>24/7 Support</h3><p>Dedicated team available anytime.</p></div>
+            <div class="feature"><h3>Fast Payouts</h3><p>Withdraw earnings quickly and easily.</p></div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial"><p>"Incredible returns in just 48 hours! Professional and reliable."</p><strong>- John D., USA</strong></div>
+        <div class="testimonial"><p>"Best investment decision I've made. Highly recommended."</p><strong>- Sarah K., UK</strong></div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p style="text-align:center;">Ready to start? Email: info@fast-earn-global.com | Phone: +44 20 1234 5678</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Fast £Arn Global. All rights reserved.</p>
+        <p class="risk"><strong>Risk Warning:</strong> Trading involves substantial risk and may result in loss of invested capital. Past performance is not indicative of future results. Please invest responsibly.</p>
+    </footer>
+</body>
+  </html>
