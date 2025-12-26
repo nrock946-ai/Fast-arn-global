@@ -17,8 +17,24 @@
             --gray: #e9ecef;
         }
         * { box-sizing: border-box; }
-        body { margin: 0; font-family: 'Roboto', sans-serif; background: var(--light); color: #333; line-height: 1.7; }
+        body { margin: 0; font-family: 'Roboto', sans-serif; background: var(--light); color: #333; line-height: 1.7; overflow-x: hidden; }
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary); }
+
+        /* Welcome Page / Splash Screen */
+        #welcome-page {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100vh;
+            background: linear-gradient(rgba(10,31,61,0.95), rgba(10,31,61,0.95)), url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: var(--text); z-index: 9999;
+            transition: opacity 1.5s ease-out, visibility 1.5s;
+        }
+        #welcome-page h1 { font-size: 5em; margin: 0; }
+        #welcome-page p { font-size: 1.8em; max-width: 800px; margin: 20px 0 40px; }
+        #welcome-page .btn { padding: 18px 50px; font-size: 1.5em; }
+
+        /* Main Site Styles (same as before with minor tweaks) */
         header { background: var(--primary); color: var(--text); padding: 15px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
         nav { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 30px; }
         .logo { font-size: 1.8em; font-weight: bold; }
@@ -43,7 +59,6 @@
         .plan li { margin: 18px 0; font-size: 1.1em; }
         .plan li i { color: var(--accent); margin-right: 10px; }
         .form-section { max-width: 900px; margin: 100px auto; padding: 50px; background: white; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
-        .form-section h2 { margin-bottom: 40px; }
         #selected-plan { text-align: center; font-size: 1.4em; font-weight: bold; color: var(--primary); margin-bottom: 40px; padding: 20px; background: #f0f4ff; border-radius: 8px; }
         form { display: grid; gap: 25px; }
         label { font-weight: 600; color: var(--primary); }
@@ -67,7 +82,31 @@
         .footer-links a:hover { color: var(--accent); }
         .reg-info { margin: 30px 0; font-size: 0.95em; }
         .risk { font-size: 0.9em; max-width: 1000px; margin: 30px auto 0; line-height: 1.6; }
+
+        /* Live Chat Button */
+        #live-chat-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent);
+            color: var(--primary);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 1001;
+            transition: all 0.3s;
+        }
+        #live-chat-btn:hover { transform: scale(1.1); }
+
         @media (max-width: 768px) {
+            #welcome-page h1 { font-size: 3.5em; }
+            #welcome-page p { font-size: 1.4em; }
             .hero h1 { font-size: 2.8em; }
             .hero p { font-size: 1.3em; }
             nav ul { flex-direction: column; gap: 15px; }
@@ -76,168 +115,198 @@
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Fast £Arn Global</div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#plans">Investment Plans</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#registration">Register</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="home" class="hero">
-        <h1>Fast £Arn Global</h1>
-        <p>Licensed International Brokerage | Secure & High-Yield Trading Solutions</p>
-        <a href="#plans" class="btn">Explore Investment Plans</a>
-    </section>
-
-    <section id="about">
-        <h2>About Fast £Arn Global</h2>
-        <p style="text-align:center; max-width:900px; margin:0 auto; font-size:1.2em;">
-            Fast £Arn Global is a fully regulated global brokerage firm with years of experience in financial markets. 
-            We specialize in forex, cryptocurrencies, commodities, and stock indices, providing institutional-grade trading tools 
-            and expert-managed investment plans to clients worldwide. Your capital is protected with segregated accounts and advanced security protocols.
-        </p>
-    </section>
-
-    <section id="plans">
-        <h2>Select Your Investment Plan</h2>
-        <div class="plans">
-            <div class="plan">
-                <h3>Basic</h3>
-                <div class="price">$850</div>
-                <p>Minimum Investment: <strong>$100</strong><br>Profit in 48 Hours</p>
-                <ul>
-                    <li><i class="fas fa-check"></i> Access to Core Markets</li>
-                    <li><i class="fas fa-check"></i> Standard Customer Support</li>
-                    <li><i class="fas fa-check"></i> Encrypted Transactions</li>
-                </ul>
-                <a href="#registration?plan=Basic&invest=100&earn=850" class="btn">Start with Basic</a>
-            </div>
-            <div class="plan">
-                <h3>Standard</h3>
-                <div class="price">$1,350</div>
-                <p>Minimum Investment: <strong>$250</strong><br>Profit in 48 Hours</p>
-                <ul>
-                    <li><i class="fas fa-check"></i> Advanced Market Analytics</li>
-                    <li><i class="fas fa-check"></i> Priority Support</li>
-                    <li><i class="fas fa-check"></i> Enhanced Security</li>
-                </ul>
-                <a href="#registration?plan=Standard&invest=250&earn=1350" class="btn">Start with Standard</a>
-            </div>
-            <div class="plan recommended">
-                <h3>Premium</h3>
-                <div class="price">$2,500</div>
-                <p>Minimum Investment: <strong>$470</strong><br>Profit in 48 Hours</p>
-                <ul>
-                    <li><i class="fas fa-check"></i> Full Suite of Trading Tools</li>
-                    <li><i class="fas fa-check"></i> 24/7 Dedicated Manager</li>
-                    <li><i class="fas fa-check"></i> Highest Level Security</li>
-                </ul>
-                <a href="#registration?plan=Premium&invest=470&earn=2500" class="btn">Start with Premium</a>
-            </div>
-            <div class="plan">
-                <h3>VIP</h3>
-                <div class="price">$5,500</div>
-                <p>Minimum Investment: <strong>$1,000</strong><br>Profit in 48 Hours</p>
-                <ul>
-                    <li><i class="fas fa-check"></i> Exclusive Strategies</li>
-                    <li><i class="fas fa-check"></i> Personal Account Manager</li>
-                    <li><i class="fas fa-check"></i> VIP Bonuses & Priority Withdrawals</li>
-                </ul>
-                <a href="#registration?plan=VIP&invest=1000&earn=5500" class="btn">Start with VIP</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="features">
-        <h2>Why Investors Trust Us</h2>
-        <div class="features">
-            <div class="feature"><i class="fas fa-shield-alt"></i><h3>Regulated & Secure</h3><p>Client funds held in segregated accounts with top-tier banks.</p></div>
-            <div class="feature"><i class="fas fa-chart-line"></i><h3>Expert Strategies</h3><p>Professional trading algorithms delivering consistent returns.</p></div>
-            <div class="feature"><i class="fas fa-headset"></i><h3>24/7 Support</h3><p>Multilingual support team available around the clock.</p></div>
-            <div class="feature"><i class="fas fa-bolt"></i><h3>Instant Withdrawals</h3><p>Process payouts within hours after plan maturity.</p></div>
-        </div>
-    </section>
-
-    <section class="testimonials">
-        <h2>Client Success Stories</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial"><p>"Received my profits exactly 48 hours after investing. Professional and transparent throughout."</p><strong>— James R., United Kingdom</strong></div>
-            <div class="testimonial"><p>"The Premium plan exceeded my expectations. Support team is outstanding."</p><strong>— Maria L., Germany</strong></div>
-            <div class="testimonial"><p>"Trusted platform with fast payouts. Highly recommend to serious investors."</p><strong>— Ahmed K., UAE</strong></div>
-        </div>
-    </section>
-
-    <!-- Fake Recent Withdrawal Popup Banner -->
-    <div class="withdrawal-popup">
-        <h3>Recent Successful Withdrawal</h3>
-        <p>Client from <strong>Canada</strong> just withdrew</p>
-        <div class="withdrawal-amount">$4,720.00</div>
-        <p>Processed in under 2 hours • December 26, 2025</p>
+    <!-- Welcome / Splash Page -->
+    <div id="welcome-page">
+        <h1>Welcome to Fast £Arn Global</h1>
+        <p>Unlock High-Yield Investment Opportunities with a Trusted Global Broker</p>
+        <button class="btn" onclick="enterSite()">Enter Website</button>
     </div>
 
-    <section id="registration" class="form-section">
-        <h2>Secure Registration</h2>
-        <p id="selected-plan">
-            Selected Plan: <span id="plan-name">None</span> — Invest \( <span id="invest-amount">0</span> to Earn \)<span id="earn-amount">0</span> in 48 hours
-        </p>
+    <!-- Main Website Content -->
+    <div id="main-site" style="display:none;">
+        <header>
+            <nav>
+                <div class="logo">Fast £Arn Global</div>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#plans">Investment Plans</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#registration">Register</a></li>
+                </ul>
+            </nav>
+        </header>
 
-        <form action="https://formspree.io/f/meeqjzpn" method="POST">
-            <input type="hidden" name="Selected Plan" id="form-plan-name">
-            <input type="hidden" name="Investment Amount" id="form-invest-amount">
-            <input type="hidden" name="Expected Earnings" id="form-earn-amount">
+        <section id="home" class="hero">
+            <h1>Fast £Arn Global</h1>
+            <p>Licensed International Brokerage | Secure & High-Yield Trading Solutions</p>
+            <a href="#plans" class="btn">Explore Investment Plans</a>
+        </section>
 
-            <label>Full Name</label>
-            <input type="text" name="Full Name" required placeholder="Your full name">
+        <section id="about">
+            <h2>About Fast £Arn Global</h2>
+            <p style="text-align:center; max-width:900px; margin:0 auto; font-size:1.2em;">
+                Fast £Arn Global is a fully regulated global brokerage firm with years of experience in financial markets. 
+                We specialize in forex, cryptocurrencies, commodities, and stock indices, providing institutional-grade trading tools 
+                and expert-managed investment plans to clients worldwide. Your capital is protected with segregated accounts and advanced security protocols.
+            </p>
+        </section>
 
-            <label>Email Address</label>
-            <input type="email" name="_replyto" required placeholder="Your email address">
+        <section id="plans">
+            <h2>Select Your Investment Plan</h2>
+            <div class="plans">
+                <div class="plan">
+                    <h3>Basic</h3>
+                    <div class="price">$850</div>
+                    <p>Minimum Investment: <strong>$100</strong><br>Profit in 48 Hours</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Access to Core Markets</li>
+                        <li><i class="fas fa-check"></i> Standard Customer Support</li>
+                        <li><i class="fas fa-check"></i> Encrypted Transactions</li>
+                    </ul>
+                    <a href="#registration?plan=Basic&invest=100&earn=850" class="btn">Start with Basic</a>
+                </div>
+                <div class="plan">
+                    <h3>Standard</h3>
+                    <div class="price">$1,350</div>
+                    <p>Minimum Investment: <strong>$250</strong><br>Profit in 48 Hours</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Advanced Market Analytics</li>
+                        <li><i class="fas fa-check"></i> Priority Support</li>
+                        <li><i class="fas fa-check"></i> Enhanced Security</li>
+                    </ul>
+                    <a href="#registration?plan=Standard&invest=250&earn=1350" class="btn">Start with Standard</a>
+                </div>
+                <div class="plan recommended">
+                    <h3>Premium</h3>
+                    <div class="price">$2,500</div>
+                    <p>Minimum Investment: <strong>$470</strong><br>Profit in 48 Hours</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Full Suite of Trading Tools</li>
+                        <li><i class="fas fa-check"></i> 24/7 Dedicated Manager</li>
+                        <li><i class="fas fa-check"></i> Highest Level Security</li>
+                    </ul>
+                    <a href="#registration?plan=Premium&invest=470&earn=2500" class="btn">Start with Premium</a>
+                </div>
+                <div class="plan">
+                    <h3>VIP</h3>
+                    <div class="price">$5,500</div>
+                    <p>Minimum Investment: <strong>$1,000</strong><br>Profit in 48 Hours</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Exclusive Strategies</li>
+                        <li><i class="fas fa-check"></i> Personal Account Manager</li>
+                        <li><i class="fas fa-check"></i> VIP Bonuses & Priority Withdrawals</li>
+                    </ul>
+                    <a href="#registration?plan=VIP&invest=1000&earn=5500" class="btn">Start with VIP</a>
+                </div>
+            </div>
+        </section>
 
-            <label>Phone Number (with country code)</label>
-            <input type="tel" name="Phone Number" required placeholder="+1 234 567 8900">
+        <section class="features">
+            <h2>Why Investors Trust Us</h2>
+            <div class="features">
+                <div class="feature"><i class="fas fa-shield-alt"></i><h3>Regulated & Secure</h3><p>Client funds held in segregated accounts with top-tier banks.</p></div>
+                <div class="feature"><i class="fas fa-chart-line"></i><h3>Expert Strategies</h3><p>Professional trading algorithms delivering consistent returns.</p></div>
+                <div class="feature"><i class="fas fa-headset"></i><h3>24/7 Support</h3><p>Multilingual support team available around the clock.</p></div>
+                <div class="feature"><i class="fas fa-bolt"></i><h3>Instant Withdrawals</h3><p>Process payouts within hours after plan maturity.</p></div>
+            </div>
+        </section>
 
-            <label>Country of Residence</label>
-            <input type="text" name="Country" required placeholder="e.g., United States">
+        <section class="testimonials">
+            <h2>Client Success Stories</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial"><p>"Received my profits exactly 48 hours after investing. Professional and transparent throughout."</p><strong>— James R., United Kingdom</strong></div>
+                <div class="testimonial"><p>"The Premium plan exceeded my expectations. Support team is outstanding."</p><strong>— Maria L., Germany</strong></div>
+                <div class="testimonial"><p>"Trusted platform with fast payouts. Highly recommend to serious investors."</p><strong>— Ahmed K., UAE</strong></div>
+                <div class="testimonial"><p>"Invested in VIP plan and got amazing returns. Best decision I made this year!"</p><strong>— Sophia M., Australia</strong></div>
+                <div class="testimonial"><p>"Smooth registration, quick response, and payout arrived on time. Excellent service."</p><strong>— Carlos D., Spain</strong></div>
+                <div class="testimonial"><p>"Started with Basic, now upgraded to Premium. Consistent profits every time."</p><strong>— Liam T., Canada</strong></div>
+            </div>
+        </section>
 
-            <label>Preferred Payment Method</label>
-            <select name="Payment Method" required>
-                <option value="" disabled selected>Choose method</option>
-                <option value="Bitcoin">Bitcoin (BTC)</option>
-                <option value="Ethereum">Ethereum (ETH)</option>
-                <option value="USDT">USDT (TRC20/ERC20)</option>
-                <option value="Bank Wire">Bank Wire Transfer</option>
-            </select>
-
-            <button type="submit" class="submit-btn">Complete Registration & Proceed</button>
-        </form>
-
-        <p style="text-align:center; margin-top:30px; font-size:0.95em; color:#555;">
-            You will receive confirmation and payment instructions via email within minutes.
-        </p>
-    </section>
-
-    <footer>
-        <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#plans">Plans</a>
-            <a href="#about">About</a>
-            <a href="#registration">Register</a>
-            <a href="#">Terms</a>
-            <a href="#">Privacy Policy</a>
+        <!-- Fake Recent Withdrawal Banner -->
+        <div class="withdrawal-popup">
+            <h3>Recent Successful Withdrawal</h3>
+            <p>Client from <strong>Canada</strong> just withdrew</p>
+            <div class="withdrawal-amount">$4,720.00</div>
+            <p>Processed in under 2 hours • December 26, 2025</p>
         </div>
-        <p class="reg-info">Fast £Arn Global Ltd • Regulated International Broker • Client funds segregated</p>
-        <p class="risk">
-            <strong>Risk Disclosure:</strong> Trading financial instruments carries a high level of risk and may result in the loss of all invested capital. 
-            Past performance is not indicative of future results. Please ensure you fully understand the risks and seek independent advice if necessary.
-        </p>
-        <p>&copy; 2025 Fast £Arn Global. All rights reserved.</p>
-    </footer>
+
+        <section id="registration" class="form-section">
+            <h2>Secure Registration</h2>
+            <p id="selected-plan">
+                Selected Plan: <span id="plan-name">None</span> — Invest \( <span id="invest-amount">0</span> to Earn \)<span id="earn-amount">0</span> in 48 hours
+            </p>
+
+            <form action="https://formspree.io/f/meeqjzpn" method="POST">
+                <input type="hidden" name="Selected Plan" id="form-plan-name">
+                <input type="hidden" name="Investment Amount" id="form-invest-amount">
+                <input type="hidden" name="Expected Earnings" id="form-earn-amount">
+
+                <label>Full Name</label>
+                <input type="text" name="Full Name" required placeholder="Your full name">
+
+                <label>Email Address</label>
+                <input type="email" name="_replyto" required placeholder="Your email address">
+
+                <label>Phone Number (with country code)</label>
+                <input type="tel" name="Phone Number" required placeholder="+1 234 567 8900">
+
+                <label>Country of Residence</label>
+                <input type="text" name="Country" required placeholder="e.g., United States">
+
+                <label>Preferred Payment Method</label>
+                <select name="Payment Method" required>
+                    <option value="" disabled selected>Choose method</option>
+                    <option value="Bitcoin">Bitcoin (BTC)</option>
+                    <option value="Ethereum">Ethereum (ETH)</option>
+                    <option value="USDT">USDT (TRC20/ERC20)</option>
+                    <option value="Bank Wire">Bank Wire Transfer</option>
+                </select>
+
+                <button type="submit" class="submit-btn">Complete Registration & Proceed</button>
+            </form>
+
+            <p style="text-align:center; margin-top:30px; font-size:0.95em; color:#555;">
+                You will receive confirmation and payment instructions via email within minutes.
+            </p>
+        </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#plans">Plans</a>
+                <a href="#about">About</a>
+                <a href="#registration">Register</a>
+                <a href="#">Terms</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <p class="reg-info">Fast £Arn Global Ltd • Regulated International Broker • Client funds segregated</p>
+            <p class="risk">
+                <strong>Risk Disclosure:</strong> Trading financial instruments carries a high level of risk and may result in the loss of all invested capital. 
+                Past performance is not indicative of future results. Please ensure you fully understand the risks and seek independent advice if necessary.
+            </p>
+            <p>&copy; 2025 Fast £Arn Global. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Live Chat Button (opens WhatsApp - replace number if needed) -->
+    <div id="live-chat-btn" onclick="window.open('https://wa.me/1234567890', '_blank')">
+        <i class="fab fa-whatsapp"></i>
+    </div>
 
     <script>
+        // Welcome page fade out and show main site
+        function enterSite() {
+            document.getElementById('welcome-page').style.opacity = '0';
+            document.getElementById('welcome-page').style.visibility = 'hidden';
+            document.getElementById('main-site').style.display = 'block';
+        }
+
+        // Auto-enter after 5 seconds (optional fallback)
+        setTimeout(enterSite, 5000);
+
+        // Plan detection from URL
         function getPlanFromURL() {
             const hash = window.location.hash;
             if (hash && hash.includes('registration')) {
@@ -257,8 +326,11 @@
             }
         }
 
-        window.onload = getPlanFromURL;
+        window.onload = function() {
+            getPlanFromURL();
+        };
 
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
